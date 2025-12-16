@@ -1,5 +1,49 @@
 # Day 2/40 - How To Dockerize a Project - CKA Full Course 2024 ☸️
+**some important shortcut of vi editor**
+✅ Delete the current line
 
+Make sure you are in Normal mode
+Press Esc (once or twice to be sure)
+Press:dd
+👉 This deletes the entire line where the cursor is.
+
+
+✅ Delete multiple lines
+Delete N lines starting from current line:
+5dd
+(Deletes 5 lines)
+
+
+✅ Delete a specific line number
+:10d
+Deletes line 10
+Delete a range:
+:10,20d
+Deletes lines 10 to 20
+
+
+✅ Delete all lines (clear file)
+:%d
+
+🧠 Useful tip
+Deleted lines go into the buffer, so you can paste them back with:
+p
+
+
+
+Delete current line	dd
+Delete N lines	Ndd
+Delete specific line	:Nd
+Delete all	:%d
+
+
+undo (u)
+
+copy line (yy)
+
+paste (p)
+
+search (/text)
 
 ## Check out the video below for Day2 👇
 

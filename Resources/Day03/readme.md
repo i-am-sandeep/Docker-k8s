@@ -129,39 +129,55 @@ Faster than running tests
 
 ---------------------------------------------------------------------------------------
 # Docker Best Practices - Quick Notes
+```
 1. Multi-Stage Builds
+```
 Purpose: Separate build environment from runtime
 Build stage: Contains build tools (Maven, npm, etc.)
 Runtime stage: Only runtime dependencies (JRE, not JDK)
 Benefits: Smaller images, faster builds, more secure
 FROM maven:3.9-jdk-17 AS builder# Build steps...FROM eclipse-temurin:17-jre-alpine AS runtimeCOPY --from=builder /app/target/*.jar /app/
+```
 2. Non-Root User
+```
 Why: Security - limit damage from container compromise
 RUN addgroup -g 1001 appgroup && \    adduser -u 1001 -S appuser -G appgroupUSER appuserCOPY --chown=appuser:appgroup app.jar /app/
+```
 3. Layer Caching Optimization
+```
 Order: Least → Most frequently changing
 # 1. Dependencies (rarely change)COPY pom.xml .RUN mvn dependency:go-offline# 2. Source code (changes often)COPY src ./srcRUN mvn package
+```
 4. Minimal Base Images
+```
 Goal: Smallest possible attack surface
 ❌ Full JDK: ~600MB
 ✅ JRE: ~200MB
 ✅ Alpine: ~150MB
 ✅ Distroless: ~120MB (most secure)
 FROM eclipse-temurin:17-jre-alpine  # RecommendedFROM gcr.io/distroless/java17       # Best security
+```
 5. Security Practices
+```
 ✅ Use specific version tags, not latest
 ✅ Scan for vulnerabilities (docker scan, trivy)
 ✅ No secrets in Dockerfile (use external secrets)
 ✅ Remove package manager cache
 ✅ Read-only file system when possible
 RUN apt-get update && \    apt-get install -y package && \    apt-get clean && \    rm -rf /var/lib/apt/lists/*
+```
 6. .dockerignore File
+```
 Purpose: Exclude unnecessary files from build context
 .git/target/*.lognode_modules/.idea/*.md
+```
 7. Health Checks
+```
 Purpose: Enable container self-healing
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \  CMD wget --spider http://localhost:8072/health || exit 1
+```
 8. Resource Optimization
+```
 Minimize layers:
 # ❌ Multiple layers
 RUN apt-get updateRUN apt-get install curl
@@ -216,8 +232,9 @@ docker run -d \
 # Check security
 docker scan myapp:1.0
 trivy image myapp:1.0
-
+```
 13. Testing Checklist
+```
 ✅ docker images myapp        # Check size
 ✅ docker history myapp       # Inspect layers
 ✅ docker scan myapp          # Security scan

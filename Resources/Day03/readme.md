@@ -95,7 +95,7 @@ docker logs containerid
 
 - To view the content of Docker container
 ```
-docker inspect
+docker inspect container_name or container_id
 ```
 
 - Cleanup the old docker images from local repo using below command:

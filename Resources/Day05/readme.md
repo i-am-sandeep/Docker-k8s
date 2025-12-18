@@ -68,13 +68,13 @@ Scheduler – Chooses the node for the pod
 kubelet – Runs on worker nodes, creates and manages pods
 Container Runtime – (Docker / containerd) actually runs containers
 
-#Step-by-Step Workflow
+# Step-by-Step Workflow
 1. User sends request using kubectl
 kubectl apply -f pod.yaml
 
 kubectl sends a REST API request to the API Server
 
-#2. API Server receives the request
+# 2. API Server receives the request
 
 The API Server:
 Authenticates the user
@@ -83,7 +83,7 @@ Validates the request (schema & syntax)
 
 ✅ Request example: Create a Pod
 
-#3. API Server stores pod spec in etcd
+# 3. API Server stores pod spec in etcd
 API Server writes the Pod definition to etcd
 etcd only stores data — it does NOT create pods
 📌 Pod state at this stage:
@@ -91,7 +91,7 @@ Pod exists in etcd
 Status: Pending
 No node assigned yet
 
-#4. Scheduler selects a node
+# 4. Scheduler selects a node
 Scheduler continuously watches the API Server
 Finds a Pending pod with no node
 Chooses the best node based on:
@@ -102,7 +102,7 @@ Node affinity
 ➡️ Scheduler updates the pod with node name
 ➡️ API Server stores this update in etcd
 
-#5. Kubelet creates the pod
+# 5. Kubelet creates the pod
 Kubelet on the selected node:
 Watches API Server
 Sees pod assigned to its node
@@ -111,12 +111,12 @@ Pulls container images
 Creates containers via container runtime
 Starts the pod
 
-#6. Pod status update
+# 6. Pod status update
 Kubelet sends pod status back to API Server
 API Server updates etcd
 Pod state changes to Running
 
-#7. Final response to the user
+# 7. Final response to the user
 
 API Server sends success response to kubectl
 User sees:

@@ -28,6 +28,22 @@
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/9aece452-6d76-452f-9c89-0f7825151312)
 
 ## ETCD Server - Key value database that stores the cluster state and configuration
+It is a document type database or no schmea database noSQL.
+
+# etcd stores all the critical cluster data, including:
+
+Cluster state
+Pod and node information
+ConfigMaps and Secrets
+Service discovery data
+Role-based access control (RBAC) info
+Apiserver will only interact with ETCD server.
+
+# Why etcd is critical
+
+Kubernetes control plane cannot function without etcd
+If etcd data is lost, cluster state is lost
+Regular etcd backups are essential in production
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/81e037e3-78f0-41a7-8589-f2b4ec3af511)
 

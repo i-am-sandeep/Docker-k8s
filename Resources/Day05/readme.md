@@ -48,12 +48,15 @@ Regular etcd backups are essential in production
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/81e037e3-78f0-41a7-8589-f2b4ec3af511)
 
 ## Kubelet - Node-level agent that helps container management and receives instructions from Api server
-<img width="641" height="293" alt="image" src="https://github.com/user-attachments/assets/a0c9feb6-a295-4523-8d5e-8ee327c38417" />
+<img width="652" height="268" alt="image" src="https://github.com/user-attachments/assets/46c33b18-0419-407c-befa-dbf185873e05" />
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/bd178509-c49c-4206-bc11-147ac91d2713)
 
 ## Kube proxy - Pod to pod communication
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/e99ec3f5-5d73-4554-99d4-a7905d463f64)
+
+# E2E flow  Imp
+<img width="720" height="383" alt="image" src="https://github.com/user-attachments/assets/cf452385-c026-4da1-ada2-41eb10952bbe" />
 
 

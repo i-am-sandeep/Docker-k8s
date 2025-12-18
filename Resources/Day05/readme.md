@@ -57,8 +57,8 @@ Regular etcd backups are essential in production
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/e99ec3f5-5d73-4554-99d4-a7905d463f64)
 
 # E2E flow  Imp
-## Kubernetes Pod Creation Flow (kubectl → Pod Running)
-# Components Involved
+# Kubernetes Pod Creation Flow (kubectl → Pod Running)
+## Components Involved
 
 kubectl – CLI used by the user
 API Server – Entry point to the Kubernetes control plane

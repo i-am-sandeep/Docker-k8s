@@ -57,6 +57,127 @@ Regular etcd backups are essential in production
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/e99ec3f5-5d73-4554-99d4-a7905d463f64)
 
 # E2E flow  Imp
-<img width="720" height="383" alt="image" src="https://github.com/user-attachments/assets/cf452385-c026-4da1-ada2-41eb10952bbe" />
+##Kubernetes Pod Creation Flow (kubectl → Pod Running)
+#Components Involved
 
+kubectl – CLI used by the user
+API Server – Entry point to the Kubernetes control plane
+Authentication & Authorization – Validates user request
+etcd – Distributed key-value store (cluster state)
+Scheduler – Chooses the node for the pod
+kubelet – Runs on worker nodes, creates and manages pods
+Container Runtime – (Docker / containerd) actually runs containers
+
+#Step-by-Step Workflow
+1. User sends request using kubectl
+kubectl apply -f pod.yaml
+
+kubectl sends a REST API request to the API Server
+
+#2. API Server receives the request
+
+The API Server:
+Authenticates the user
+Authorizes the request (RBAC)
+Validates the request (schema & syntax)
+
+✅ Request example: Create a Pod
+
+#3. API Server stores pod spec in etcd
+API Server writes the Pod definition to etcd
+etcd only stores data — it does NOT create pods
+📌 Pod state at this stage:
+Pod exists in etcd
+Status: Pending
+No node assigned yet
+
+#4. Scheduler selects a node
+Scheduler continuously watches the API Server
+Finds a Pending pod with no node
+Chooses the best node based on:
+CPU & memory
+Taints & tolerations
+Node affinity
+
+➡️ Scheduler updates the pod with node name
+➡️ API Server stores this update in etcd
+
+#5. Kubelet creates the pod
+Kubelet on the selected node:
+Watches API Server
+Sees pod assigned to its node
+Kubelet:
+Pulls container images
+Creates containers via container runtime
+Starts the pod
+
+#6. Pod status update
+Kubelet sends pod status back to API Server
+API Server updates etcd
+Pod state changes to Running
+
+#7. Final response to the user
+
+API Server sends success response to kubectl
+User sees:
+pod/my-pod created
+
+#Diagram – Pod Creation Flow
+User
+ |
+ | kubectl apply -f pod.yaml
+ v
+kubectl
+ |
+ v
+API Server
+ |
+ |-- Authentication & Authorization
+ |-- Validation
+ |
+ v
+etcd  <---- Stores Pod Spec (Pending)
+ |
+ v
+Scheduler
+ |
+ |-- Selects Node
+ |
+ v
+API Server
+ |
+ v
+etcd  <---- Updates Pod with Node Info
+ |
+ v
+kubelet (on selected Node)
+ |
+ |-- Pull Image
+ |-- Create Containers
+ |-- Start Pod
+ |
+ v
+API Server
+ |
+ v
+etcd  <---- Updates Pod Status (Running)
+ |
+ v
+kubectl (Response to User)
+
+##Key Points to Remember (Interview-Ready)
+
+API Server is the only component that talks to etcd
+
+etcd never creates resources, it only stores state
+
+Scheduler does not create pods, it only assigns nodes
+
+kubelet actually creates and runs the pod
+
+Loss of etcd = loss of cluster state
+ 
+
+ 
+ -
 

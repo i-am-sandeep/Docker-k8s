@@ -48,6 +48,7 @@ Regular etcd backups are essential in production
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/81e037e3-78f0-41a7-8589-f2b4ec3af511)
 
 ## Kubelet - Node-level agent that helps container management and receives instructions from Api server
+<img width="641" height="293" alt="image" src="https://github.com/user-attachments/assets/a0c9feb6-a295-4523-8d5e-8ee327c38417" />
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/bd178509-c49c-4206-bc11-147ac91d2713)
 

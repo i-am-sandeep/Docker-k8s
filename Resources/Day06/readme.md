@@ -9,3 +9,5 @@
 - https://kubernetes.io/docs
 - https://kubernetes.io/blog/
 - Kubernetes cheat sheet : https://kubernetes.io/docs/reference/kubectl/quick-reference/
+kubectl config get-contexts
+kubectl config use context kind-sandeep1

@@ -45,3 +45,9 @@ spec:
 -  unset             Unset an individual value in a kubeconfig file
 - use-context       Set the current-context in a kubeconfig file
 -  view              Display merged kubeconfig settings or a specified kubec
+
+-  -Summary
+## Status	Meaning
+### ErrImagePull	Image download failed
+### ImagePullBackOff	Kubernetes is retrying
+### Running	✅ All good

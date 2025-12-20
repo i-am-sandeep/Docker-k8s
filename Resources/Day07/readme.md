@@ -52,3 +52,7 @@ spec:
 ### ErrImagePull	- Image download failed
 ### ImagePullBackOff	- Kubernetes is retrying
 ### Running - 	✅ All good
+
+<img width="577" height="547" alt="image" src="https://github.com/user-attachments/assets/abe14f69-c24e-4b75-82e3-297812f34964" />
+
+

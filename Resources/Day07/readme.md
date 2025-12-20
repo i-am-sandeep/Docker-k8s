@@ -46,7 +46,8 @@ spec:
 - use-context       Set the current-context in a kubeconfig file
 -  view              Display merged kubeconfig settings or a specified kubec
 
--  -Summary
+-  kubectl run nginx --image=nginx --dry-run-client -o yaml > new-pod.yaml
+-  k get pods --show-labels
 ## Status	Meaning
 ### ErrImagePull	- Image download failed
 ### ImagePullBackOff	- Kubernetes is retrying

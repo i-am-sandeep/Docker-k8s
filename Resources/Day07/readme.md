@@ -48,6 +48,6 @@ spec:
 
 -  -Summary
 ## Status	Meaning
-### ErrImagePull	Image download failed
-### ImagePullBackOff	Kubernetes is retrying
-### Running	✅ All good
+### ErrImagePull	- Image download failed
+### ImagePullBackOff	- Kubernetes is retrying
+### Running - 	✅ All good

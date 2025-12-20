@@ -28,5 +28,5 @@ spec:
 ```
 <img width="602" height="232" alt="image" src="https://github.com/user-attachments/assets/7f3ea289-caf5-43ce-bf2d-3e77d416fd68" />
 
-kubectl explain pods
-kubectl config set-context kind-sancluster2
+- kubectl explain pods
+- kubectl config set-context kind-sancluster2

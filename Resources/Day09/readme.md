@@ -29,6 +29,7 @@ nodes:
 Different applications communicate with each other within Kubernetes using a service; it is also used to access applications outside the cluster.
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/e768b073-dd7b-478a-bbea-ad6acae18051)
+<img width="527" height="265" alt="image" src="https://github.com/user-attachments/assets/b7d6eda8-1bef-4233-a356-ac535197ed8c" />
 
 There are 4 types of Services:
 - ClusterIP(For Internal access)

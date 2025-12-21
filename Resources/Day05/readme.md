@@ -55,6 +55,7 @@ Regular etcd backups are essential in production
 ## Kube proxy - Pod to pod communication
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/e99ec3f5-5d73-4554-99d4-a7905d463f64)
+<img width="527" height="265" alt="image" src="https://github.com/user-attachments/assets/c5835c7d-6c26-4936-9378-c517e47692af" />
 
 # E2E flow  Imp
 # Kubernetes Pod Creation Flow (kubectl → Pod Running)

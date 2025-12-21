@@ -123,3 +123,6 @@ spec:
   type: ExternalName
   externalName: my.api.example.com
 ```
+
+- <img width="486" height="52" alt="image" src="https://github.com/user-attachments/assets/f1e44be8-a7c8-46b0-80ec-7b0bbe09c7eb" />
+

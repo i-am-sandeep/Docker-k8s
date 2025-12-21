@@ -42,6 +42,7 @@ There are 4 types of Services:
 - External (To use an external DNS for routing)
 
 ### ClusterIP
+<img width="599" height="332" alt="image" src="https://github.com/user-attachments/assets/f4169d17-6b23-4a02-bd08-4de51d5907e0" />
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/3817a5e7-5208-41c8-9dee-d4c052038151)
 

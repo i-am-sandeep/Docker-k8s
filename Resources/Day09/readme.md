@@ -31,6 +31,10 @@ Different applications communicate with each other within Kubernetes using a ser
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/e768b073-dd7b-478a-bbea-ad6acae18051)
 <img width="527" height="265" alt="image" src="https://github.com/user-attachments/assets/b7d6eda8-1bef-4233-a356-ac535197ed8c" />
 
+
+<img width="536" height="221" alt="image" src="https://github.com/user-attachments/assets/50b88f18-8591-4f3b-ae41-eeb7eb9c9645" />
+<img width="379" height="297" alt="image" src="https://github.com/user-attachments/assets/6e49850d-4c91-47ea-94f2-2877b1019883" />
+
 There are 4 types of Services:
 - ClusterIP(For Internal access)
 - NodePort(To access the application on a particular port)
@@ -61,7 +65,9 @@ spec:
 ### NodePort
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/8aa9c482-be3a-450a-95b7-0a0c0e80403e)
-
+ - Here external Port is access from outside the node 
+ - target is final port we want to access internally or externally
+ - port is sth which help internal services pods to go to the target pod
 #### Sample YAML for Nodeport
 
 ```yaml

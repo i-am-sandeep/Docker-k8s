@@ -25,7 +25,11 @@
 ### how can we create a ns in a decalrative way
 - create ns name_of_namespace
 - Generally if you create a deployemt it would go in the default namespace so you have to specify the namespace name
--ex: k create deployemnt/nginx-demo --image=nginx -n demo
+- ex: k create deployemnt/nginx-demo --image=nginx -n demo.
+- if you want to communicate between two pods in differenct ns then you can do it with pods ip
+- kubectl config get-contexts -o name
+- kubectl config current-context
+- 
 
 
 

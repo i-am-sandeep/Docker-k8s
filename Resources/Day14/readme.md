@@ -23,13 +23,14 @@ Toleration allows a pod to say, "Hey, I can handle that taint. Schedule me anywa
 ---
 
 ## Taints & Tolerations in Action 🎬
+<img width="547" height="127" alt="image" src="https://github.com/user-attachments/assets/a719eae8-a7f4-4072-86af-82931ad7e102" />
 
 Here’s a breakdown of the commands to manage taints and tolerations:
 
 ### Tainting a Node:
 
 ```bash
-kubectl taint nodes node1 key=gpu:NoSchedule
+kubectl taint nodes node1 gpu=true:Schedule
 ```
 
 This command taints node1 with the key "gpu" and the effect "NoSchedule." Pods without a toleration for this taint won't be scheduled there.
@@ -37,7 +38,7 @@ This command taints node1 with the key "gpu" and the effect "NoSchedule." Pods w
 To remove the taint , you add - at the end of the command , like below.
 
 ```bash
-kubectl taint nodes node1 key=gpu:NoSchedule-
+kubectl taint nodes node1 gpu=true:Schedule
 ```
 
 ### Adding toleration to the pod:

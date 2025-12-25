@@ -26,7 +26,9 @@
 - create ns name_of_namespace
 - Generally if you create a deployemt it would go in the default namespace so you have to specify the namespace name
 - ex: k create deployemnt/nginx-demo --image=nginx -n demo.
-- if you want to communicate between two pods in differenct ns then you can do it with pods ip
+- if you want to communicate between two pods in different ns then you can do it with pods ip but can access it with their hostname, we have to use fully qualified domain name.(IP to DNS resolution)
+### hostname are not cluster wide, it is namespace wide 
+- conf file which is responsible to resolve host inside the pod is /etc/resolv.conf
 - kubectl config get-contexts -o name
 - kubectl config current-context
 - 

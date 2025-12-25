@@ -29,6 +29,8 @@
 - if you want to communicate between two pods in different ns then you can do it with pods ip but can access it with their hostname, we have to use fully qualified domain name.(IP to DNS resolution)
 ### hostname are not cluster wide, it is namespace wide 
 - conf file which is responsible to resolve host inside the pod is /etc/resolv.conf
+- <img width="460" height="206" alt="image" src="https://github.com/user-attachments/assets/23151ba6-1faa-4c2a-a6e9-b7250f76117d" />
+
 - kubectl config get-contexts -o name
 - kubectl config current-context
 - 

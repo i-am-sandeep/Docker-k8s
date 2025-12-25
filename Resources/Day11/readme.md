@@ -58,3 +58,35 @@ spec:
          sleep 2;
         done;
 ```
+
+- k expose deploy demo --name myservice --port 80 -n demo
+- kubectl expose deploy nginx-deploy --name myservice --port=80
+Creates a Service
+The kubectl expose command creates a new Service object in Kubernetes
+
+In your case, the Service will be named myservice because of --name myservice.
+
+Links the Service to the Deployment
+
+The Service is automatically associated with the Deployment nginx-deploy.
+
+It does this by using the labels on the Pods created by that Deployment.
+
+The Service will select those Pods and route traffic to them.
+
+Exposes the Deployment on Port 80
+
+The Service listens on port 80 (--port=80).
+
+By default, it forwards traffic to the same port on the Pods (targetPort=80 unless you specify otherwise).
+
+This means any request to the Service on port 80 will be sent to the Pods of nginx-deploy.
+
+- kubectl -n demo exec myapp-pod -it -- printenv
+- kubectl -n demo exec myapp-pod -it -- sh
+- If your pod has a main container named, say, app-container, you’d run:
+
+kubectl -n demo exec myapp-pod -c app-container -it -- sh
+✅ Bottom line: You can only exec into running containers. Init containers finish and exit, so you can’t exec into them after startup. Use the actual running container name from the pod spec instead.
+
+- 

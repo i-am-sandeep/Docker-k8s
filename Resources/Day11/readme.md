@@ -89,4 +89,4 @@ This means any request to the Service on port 80 will be sent to the Pods of ngi
 kubectl -n demo exec myapp-pod -c app-container -it -- sh
 ✅ Bottom line: You can only exec into running containers. Init containers finish and exit, so you can’t exec into them after startup. Use the actual running container name from the pod spec instead.
 
-- 
+- k get pods -w  => watch it with current status. 

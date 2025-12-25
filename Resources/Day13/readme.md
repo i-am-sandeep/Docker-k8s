@@ -51,7 +51,8 @@ Static Pods are special types of pods managed directly by the `kubelet` on each 
 2. **Modify the YAML File**: Edit or create the YAML configuration file for the static pod.
 3. **Remove the Scheduler YAML**: To stop the pod, you must remove or modify the corresponding file directly on the node.
 4. **Default location**": is usually `/etc/kubernetes/manifests/`; you can place the pod YAML in the directory, and Kubelet will pick it for scheduling.
-![Uploading image.png…]()
+<img width="792" height="117" alt="image" src="https://github.com/user-attachments/assets/f512c173-0349-4cad-ad9a-1597452b8894" />
+
 
 ## 🧭 Manual Pod Scheduling
 

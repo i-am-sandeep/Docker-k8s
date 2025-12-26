@@ -66,7 +66,8 @@ spec:
 ### Labels vs Taints/Tolerations
 
 Labels group nodes based on size, type,env, etc. Unlike taints, labels don't directly affect scheduling but are useful for organizing resources.
-
+- Taints and toleration works as a restriction applied on a node, node makes a decison what type of pod to accept.
+- But on Node selectors pods take the decision on which node it has to go.
 ### Limitations to Remember 🚧
 
 Taints and tolerations are powerful tools, but they have limitations. They cannot handle complex expressions like "AND" or "OR." 
